@@ -14,6 +14,11 @@ using namespace std;
 PARSER 				parseObjct;
 RUNTIME_CLASS 		runtimeObjct;
 
+ifstream file;
+file.open("program.txt");
+
+uint16_t lineNumber = 0;
+
 uint8_t COMPILER_CLASS::identifyInput(char *input){
 	if(!strcmp(input, "setLed"))
 		return SET_LED_STATMNT;
@@ -21,6 +26,8 @@ uint8_t COMPILER_CLASS::identifyInput(char *input){
 		return RETURN_LED_STATMNT;
 	if(!strcmp(input, "returnKnop"))
 		return RETURN_KNOP_STATMT;
+	if(!strcmp(input, "while"))
+		return WHILE_STATEMENT;
 	
 	else return 0;
 }
@@ -88,6 +95,10 @@ bool executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 	return true;
 }
 
+bool executeWhile(char *tokens[], uint16_t lineNumber){
+	uint16_t lineNumber_cpy = lineNumber;
+	
+}
 
 bool COMPILER_CLASS::executeInstruction(uint8_t instruction, char *tokens[MAX_NUM_TOKENS]){
 	if(instruction == INVALID_INPUT){
@@ -106,19 +117,25 @@ bool COMPILER_CLASS::executeInstruction(uint8_t instruction, char *tokens[MAX_NU
 		executeReturnKnop(tokens);
 		return true;
 	}
+	if(instruction == WHILE_STATEMENT){
+		executeWhile(tokens);
+		return true;
+	}
 	return false;
 }
 
 COMPILER_CLASS compObjct;
+
+void skipToLine(char *input, uint16_t lineNumber){
+	for(uint16_t i = 0; i <= lineNumber; i++)
+		file.getline(input, sizeof input);
+}
 
 int main() {
 	runtimeObjct.initBcm();
 	char *tokens[MAX_NUM_TOKENS];
 	char input[MAX_TOKEN_SIZE];
 	//read program file
-	
-	ifstream file;
-	file.open("program.txt");
 	file.getline(input, sizeof input);
 	while(parseObjct.tokenizer(input, tokens)){
 		compObjct.executeInstruction(compObjct.identifyInput(input), tokens);
