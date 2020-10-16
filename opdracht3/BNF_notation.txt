@@ -1,0 +1,12 @@
+<set-led-statement> ::= setLed <led-num> <led-state-exp>
+<return-led-statement> ::= returnLed<led-num>
+<led-state-exp> ::= ON|OFF|HIGH|LOW
+
+<return-knop-statement> ::= returnKnop
+<knop-state-exp> ::= HIGH|LOW
+
+<whitespace> ::= 0x20|0x0C|0x0A|0x0D|0x09|0x0B
+
+<statement> ::= <set-led-statement>|<return-led-statement>|<return-knop-statement>
+<expression> ::= <led-state-exp>|<knop-state-exp>
+<while-statement> ::= while (<expression>) <statement>
