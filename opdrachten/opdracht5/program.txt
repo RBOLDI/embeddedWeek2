@@ -1,0 +1,10 @@
+setLed 1 LOW
+returnLed 1
+setLed
+while{ led-state == LOW do:
+setLed 1 HIGH
+returnKnop 1
+returnLed 1
+setLed
+}
+setLed 1 LOW

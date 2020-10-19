@@ -14,6 +14,8 @@ using namespace std;
 PARSER 				parseObjct;
 RUNTIME_CLASS 		runtimeObjct;
 
+uint16_t lineNumber = 0;
+
 uint8_t COMPILER_CLASS::identifyInput(char *input){
 	if(!strcmp(input, "setLed"))
 		return SET_LED_STATMNT;
@@ -21,7 +23,6 @@ uint8_t COMPILER_CLASS::identifyInput(char *input){
 		return RETURN_LED_STATMNT;
 	if(!strcmp(input, "returnKnop"))
 		return RETURN_KNOP_STATMT;
-	
 	else return 0;
 }
 
@@ -88,7 +89,6 @@ bool executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 	return true;
 }
 
-
 bool COMPILER_CLASS::executeInstruction(uint8_t instruction, char *tokens[MAX_NUM_TOKENS]){
 	if(instruction == INVALID_INPUT){
 		cout<<"No valid input...\n"<<endl;
@@ -112,25 +112,16 @@ bool COMPILER_CLASS::executeInstruction(uint8_t instruction, char *tokens[MAX_NU
 COMPILER_CLASS compObjct;
 
 int main() {
+	ifstream file;
+	file.open("program.txt");
 	runtimeObjct.initBcm();
 	char *tokens[MAX_NUM_TOKENS];
 	char input[MAX_TOKEN_SIZE];
 	//read program file
-	
-	ifstream file;
-	file.open("program.txt");
 	file.getline(input, sizeof input);
 	while(parseObjct.tokenizer(input, tokens)){
 		compObjct.executeInstruction(compObjct.identifyInput(input), tokens);
 		file.getline(input, sizeof input);
 	}
-	/*
-	cout << "Give input:" << endl;
-	cin.getline(input, MAX_TOKEN_SIZE);
-	while(parseObjct.tokenizer(input, tokens)){
-		compObjct.executeInstruction(compObjct.identifyInput(input), tokens);
-		cout << "Give input:" << endl;
-		cin.getline(input, MAX_TOKEN_SIZE);
-	}*/
 	runtimeObjct.closeBcm();
 }

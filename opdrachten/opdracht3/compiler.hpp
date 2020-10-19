@@ -22,6 +22,7 @@
 class COMPILER_CLASS {
 	public:
 		bool executeInstruction(uint8_t instruction, char *tokens[MAX_NUM_TOKENS]);
+		bool ledState;
 		uint8_t identifyInput(char *input);
 		
 	private:
