@@ -72,10 +72,14 @@ bool COMPILER_CLASS::executeSetLed(char *tokens[MAX_NUM_TOKENS]){
 		return false;
 	}
 	//determine desired state
-	if (!strcmp(tokens[2], "HIGH"))
+	if (!strcmp(tokens[2], "HIGH")){
 		state = HIGH;
-	else if(!strcmp(tokens[2], "LOW"))
+		strcpy(ledState_value, "HIGH");
+	}
+	else if(!strcmp(tokens[2], "LOW")){
 		state = LOW;
+		strcpy(ledState_value, "LOW");
+	}
 	else{
 		cout<<"not a valid led-state...\n"<<endl;
 		return false;
@@ -121,9 +125,37 @@ bool COMPILER_CLASS::executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 }
 
 bool COMPILER_CLASS::executeWhile(char *tokens[], uint16_t lineNumber){
-	//uint16_t lineNumber_cpy = lineNumber;
-	checkWhileConditions(tokens[1], tokens[2], tokens[3], lineNumber);
-	return false;
+	char input[MAX_TOKEN_SIZE];
+	char while_expression[MAX_TOKEN_SIZE];
+	char while_relationOperator[MAX_TOKEN_SIZE];
+	char while_desiredState[MAX_TOKEN_SIZE];
+	strcpy(while_expression, tokens[1]);
+	strcpy(while_relationOperator, tokens[2]);
+	strcpy(while_desiredState, tokens[3]);
+	uint16_t lineNumber_cpy = lineNumber;
+	
+	if(checkWhileConditions(while_expression, while_relationOperator, while_desiredState, lineNumber))
+		executeLoop_flag = true;
+	
+	while(executeLoop_flag == true){
+		file.getline(input, sizeof input);
+		lineNumber_cpy++;
+		if(parseObjct.tokenizer(input, tokens)){
+			if(!strcmp(tokens[0], "}")){
+				if(!checkWhileConditions(while_expression, while_relationOperator, while_desiredState, lineNumber))
+					executeLoop_flag = false;
+				else{
+					lineNumber_cpy = lineNumber;
+					skipToLine(lineNumber);
+				}
+			}
+			else
+				executeInstruction(tokens, lineNumber_cpy);
+		}
+	}
+	cout<<"End of while!"<<endl;
+	skipToLine(lineNumber_cpy);
+	return true;
 }
 
 bool COMPILER_CLASS::checkWhileConditions(char *expression, char *relationOperator, char *desiredState, uint16_t lineNumber){
@@ -179,6 +211,10 @@ bool COMPILER_CLASS::checkWhileConditions(char *expression, char *relationOperat
 
 bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS], uint16_t lineNumber){
 	uint16_t instruction = instructionIndex(tokens[0]);
+	if(!strcmp(tokens[0], "}")){
+		cout<<"Error... unexpected end of while function, check line: "<<(unsigned) lineNumber<<endl;
+		return false;
+	}
 	if(instruction == INVALID_INPUT){
 		cout<<"Error...No valid input, check line: "<<(unsigned) lineNumber<<endl;
 		return false;
@@ -222,8 +258,11 @@ COMPILER_CLASS compObjct;
 
 
 
-void skipToLine(char *input, uint16_t lineNumber){
-	for(uint16_t i = 0; i <= lineNumber; i++)
+void COMPILER_CLASS::skipToLine(uint16_t lineNumber){
+	char input[MAX_TOKEN_SIZE];
+	file.close();
+	file.open("program.txt");
+	for(uint16_t i = 0; i < lineNumber; i++)
 		file.getline(input, sizeof input);
 }
 

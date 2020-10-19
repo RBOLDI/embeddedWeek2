@@ -1,8 +1,10 @@
-setLed 1 HIGH
+setLed 1 LOW
 returnLed 1
 setLed
-returnKnop 2
 while{ led-state == LOW do:
-setLed 1 LOW
-returnKnop
+setLed 1 HIGH
+returnKnop 1
+returnLed 1
+setLed
 }
+setLed 1 LOW

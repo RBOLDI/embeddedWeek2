@@ -34,6 +34,8 @@ class COMPILER_CLASS {
 		//while:
 		bool executeWhile(char *tokens[], uint16_t lineNumber);
 		bool checkWhileConditions(char *expression, char *relationOperator, char *desiredState, uint16_t lineNumber);
+		void skipToLine(uint16_t lineNumber);
+		bool executeLoop_flag = false;
 	//Statements:
 		uint16_t instructionIndex(char *input);
 		void getStatements(void);
