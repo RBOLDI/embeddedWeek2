@@ -3,8 +3,10 @@ returnLed 1
 setLed
 while{ led-state == LOW do:
 setLed 1 HIGH
+delay 1000
 returnKnop 1
 returnLed 1
-setLed
+setLed 1 LOW
+delay 1000
 }
 setLed 1 LOW
