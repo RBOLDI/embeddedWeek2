@@ -14,8 +14,13 @@
 #define WHILE_STATEMENT		3
 #define DELAY_STATEMENT		4
 //Expression indexes:
-#define LED_STATE_EXPR		0
-#define KNOP_STATE_EXPR		1
+#define LED1_STATE_EXPR		0
+#define LED2_STATE_EXPR		1
+#define LED3_STATE_EXPR		2
+#define KNOP1_STATE_EXPR	3
+#define KNOP2_STATE_EXPR	4
+#define KNOP3_STATE_EXPR	5
+#define KNOP4_STATE_EXPR	6
 //Invalid input index:
 #define INVALID_INPUT		999
 
@@ -52,8 +57,13 @@ class COMPILER_CLASS {
 		void getExpressions(void);
 		char *expressions[MAX_NUM_TOKENS];
 		char *expressionValues[MAX_NUM_TOKENS];
-		char ledState_exp[MAX_TOKEN_SIZE] = "led-state"; char ledState_value[MAX_TOKEN_SIZE] = "LOW";
-		char knopState_exp[MAX_TOKEN_SIZE] = "knop-state"; char knopState_value[MAX_TOKEN_SIZE] = "LOW";
+		char led1State_exp[MAX_TOKEN_SIZE] = "led1-state"; char led1State_value[MAX_TOKEN_SIZE] = "LOW";
+		char led2State_exp[MAX_TOKEN_SIZE] = "led2-state"; char led2State_value[MAX_TOKEN_SIZE] = "LOW";
+		char led3State_exp[MAX_TOKEN_SIZE] = "led3-state"; char led3State_value[MAX_TOKEN_SIZE] = "LOW";
+		char knop1State_exp[MAX_TOKEN_SIZE] = "knop1-state"; char knop1State_value[MAX_TOKEN_SIZE] = "LOW";
+		char knop2State_exp[MAX_TOKEN_SIZE] = "knop2-state"; char knop2State_value[MAX_TOKEN_SIZE] = "LOW";
+		char knop3State_exp[MAX_TOKEN_SIZE] = "knop3-state"; char knop3State_value[MAX_TOKEN_SIZE] = "LOW";
+		char knop4State_exp[MAX_TOKEN_SIZE] = "knop4-state"; char knop4State_value[MAX_TOKEN_SIZE] = "LOW";
 };
 
 #endif

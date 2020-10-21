@@ -26,11 +26,21 @@ void COMPILER_CLASS::getStatements(void){
 }
 
 void COMPILER_CLASS::getExpressions(void){
-	expressions[LED_STATE_EXPR] 	= ledState_exp;
-	expressions[KNOP_STATE_EXPR] 	= knopState_exp;
+	expressions[LED1_STATE_EXPR] 	= led1State_exp;
+	expressions[LED2_STATE_EXPR] 	= led2State_exp;
+	expressions[LED3_STATE_EXPR] 	= led3State_exp;
+	expressions[KNOP1_STATE_EXPR] 	= knop1State_exp;
+	expressions[KNOP2_STATE_EXPR] 	= knop2State_exp;
+	expressions[KNOP3_STATE_EXPR] 	= knop3State_exp;
+	expressions[KNOP4_STATE_EXPR] 	= knop4State_exp;
 	//Starting values:
-	expressionValues[LED_STATE_EXPR] 	= ledState_value;
-	expressionValues[KNOP_STATE_EXPR] 	= knopState_value;
+	expressionValues[LED1_STATE_EXPR] 	= led1State_value;
+	expressionValues[LED2_STATE_EXPR] 	= led2State_value;
+	expressionValues[LED3_STATE_EXPR] 	= led3State_value;
+	expressionValues[KNOP1_STATE_EXPR] 	= knop1State_value;
+	expressionValues[KNOP2_STATE_EXPR] 	= knop2State_value;
+	expressionValues[KNOP3_STATE_EXPR] 	= knop3State_value;
+	expressionValues[KNOP4_STATE_EXPR] 	= knop4State_value;
 }
 
 void COMPILER_CLASS::compilerInit(void){
@@ -59,33 +69,35 @@ uint16_t COMPILER_CLASS::expressionIndex(char *input){
 }
 
 bool COMPILER_CLASS::executeSetLed(char *tokens[MAX_NUM_TOKENS]){
-	uint8_t led;
+	uint8_t ledGPIO;
+	uint8_t ledIndex;
 	int state;
 	//determine led hardware
 	if (!strcmp(tokens[1], "1"))
-		led = LED1;
+		ledGPIO = LED1;
 	else if (!strcmp(tokens[1], "2"))
-		led = LED2;
+		ledGPIO = LED2;
 	else if (!strcmp(tokens[1], "3"))
-		led = LED3;
+		ledGPIO = LED3;
 	else{
 		cout<<"Undefined led...\n"<<endl;
 		return false;
 	}
+	ledIndex = atoi(tokens[1]) - 1;
 	//determine desired state
 	if (!strcmp(tokens[2], "HIGH")){
 		state = HIGH;
-		strcpy(ledState_value, "HIGH");
+		strcpy(expressionValues[ledIndex], "HIGH");
 	}
 	else if(!strcmp(tokens[2], "LOW")){
 		state = LOW;
-		strcpy(ledState_value, "LOW");
+		strcpy(expressionValues[ledIndex], "LOW");
 	}
 	else{
 		cout<<"not a valid led-state...\n"<<endl;
 		return false;
 	}
-	runtimeObjct.setLed(led, state);
+	runtimeObjct.setLed(ledGPIO, state);
 	return true;
 }
 
@@ -107,21 +119,28 @@ bool COMPILER_CLASS::executeReturnLed(char *tokens[MAX_NUM_TOKENS]){
 }
 
 bool COMPILER_CLASS::executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
-	uint8_t button;
+	uint8_t buttonGPIO;
+	uint8_t buttonIndex;
+	uint8_t state;
 	//determine knop hardware
 	if (!strcmp(tokens[1], "1"))
-		button = BUTTON1;
+		buttonGPIO = BUTTON1;
 	else if (!strcmp(tokens[1], "2"))
-		button = BUTTON2;
+		buttonGPIO = BUTTON2;
 	else if (!strcmp(tokens[1], "3"))
-		button = BUTTON3;
+		buttonGPIO = BUTTON3;
 	else if (!strcmp(tokens[1], "4"))
-		button = BUTTON4;
+		buttonGPIO = BUTTON4;
 	else{
 		cout<<"Undefined knop...\n"<<endl;
 		return false;
 	}
-	runtimeObjct.pollButton(button);
+	buttonIndex = atoi(tokens[1])+2
+	state = runtimeObjct.pollButton(buttonGPIO);
+	if(state == HIGH)
+		strcpy(expressionValues[buttonIndex], "HIGH");
+	else
+		strcpy(expressionValues[buttonIndex], "LOW");
 	return true;
 }
 
