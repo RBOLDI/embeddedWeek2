@@ -44,9 +44,7 @@ int RUNTIME_CLASS::closeBcm(void)
 int RUNTIME_CLASS::setLed(char led, int state)
 {
 	cout<<"execute setLed"<<endl;
-	if ( state == HIGH ) 
-		bcm2835_gpio_write(led, state);
-	else bcm2835_gpio_write(led, LOW);
+	bcm2835_gpio_write(led, state);
 	return 0;
 }
 

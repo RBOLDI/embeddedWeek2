@@ -43,6 +43,7 @@ class COMPILER_CLASS {
 		char setLed_stmnt[MAX_TOKEN_SIZE] = "setLed";
 		char returnLed_stmnt[MAX_TOKEN_SIZE] = "returnLed";
 		char returnKnop_stmnt[MAX_TOKEN_SIZE] = "returnKnop";
+		char delay_stmnt[MAX_TOKEN_SIZE] = "delay";
 		char while_stmnt[MAX_TOKEN_SIZE] = "while{";
 	//Epressions:
 		uint16_t expressionIndex(char *input);

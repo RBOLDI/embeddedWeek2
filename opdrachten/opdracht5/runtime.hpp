@@ -19,6 +19,7 @@ class RUNTIME_CLASS {
 		int setLed(char led, int state);
 		int pollLed(char led);
 		int pollButton(char button);
+		int delayRPI(char ms)
 		
 	private:
 

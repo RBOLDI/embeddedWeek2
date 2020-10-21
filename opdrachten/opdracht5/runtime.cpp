@@ -61,3 +61,9 @@ int RUNTIME_CLASS::pollButton(char button)
 	cout<<"execute returnKnop"<<endl;
 	return bcm2835_gpio_lev(button);
 }
+
+int RUNTIME_CLASS::delayRPI(uint8_t ms)
+{
+	cout<<"Delay "<< (unsigned)ms<< "ms"<<endl;
+	bcm2835_delay(ms);
+}

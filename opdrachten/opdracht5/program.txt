@@ -2,7 +2,7 @@ setLed 1 LOW
 returnLed 1
 setLed
 while{ led-state == LOW do:
-setLed 1 HIGH
+setLed 1 LOW
 returnKnop 1
 returnLed 1
 setLed
