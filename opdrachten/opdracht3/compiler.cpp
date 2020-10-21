@@ -123,5 +123,5 @@ int main() {
 		compObjct.executeInstruction(compObjct.identifyInput(input), tokens);
 		file.getline(input, sizeof input);
 	}
-	runtimeObjct.closeBcm();
+	//runtimeObjct.closeBcm();
 }
