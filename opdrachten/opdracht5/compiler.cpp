@@ -22,6 +22,7 @@ void COMPILER_CLASS::getStatements(void){
 	statements[RETURN_LED_STATMNT] 	= returnLed_stmnt;
 	statements[RETURN_KNOP_STATMNT] = returnKnop_stmnt;
 	statements[WHILE_STATEMENT] 	= while_stmnt;
+	statements[DELAY_STATEMENT]		= delay_stmnt;
 }
 
 void COMPILER_CLASS::getExpressions(void){
@@ -209,7 +210,13 @@ bool COMPILER_CLASS::checkWhileConditions(char *expression, char *relationOperat
 	return false;
 }
 
-bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS], uint16_t lineNumber){
+bool COMPILER_CLASS::executeDelay(char *tokens[]){
+	uint16_t ms = atoi(tokens[1]);
+	runtimeObjct.delayRPI(ms);
+	return true;
+}
+
+bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS],uint16_t lineNumber){
 	uint16_t instruction = instructionIndex(tokens[0]);
 	if(!strcmp(tokens[0], "}")){
 		cout<<"Error... unexpected end of while function, check line: "<<(unsigned) lineNumber<<endl;
@@ -249,6 +256,14 @@ bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS], uint16_t l
 			return false;
 		}
 		executeWhile(tokens, lineNumber);
+		return true;
+	}
+	if(instruction == DELAY_STATEMENT){
+		if(tokens[1] == NULL){
+			cout<<"Error...no time to delay, check line: "<<(unsigned) lineNumber<<endl;
+			return false;
+		}
+		executeDelay(tokens);
 		return true;
 	}
 	return false;

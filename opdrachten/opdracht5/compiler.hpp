@@ -12,6 +12,7 @@
 #define RETURN_LED_STATMNT	1
 #define RETURN_KNOP_STATMNT	2
 #define WHILE_STATEMENT		3
+#define DELAY_STATEMENT		4
 //Expression indexes:
 #define LED_STATE_EXPR		0
 #define KNOP_STATE_EXPR		1
@@ -31,6 +32,7 @@ class COMPILER_CLASS {
 		bool executeReturnKnop(char *tokens[MAX_NUM_TOKENS]);
 		bool executeReturnLed(char *tokens[MAX_NUM_TOKENS]);
 		bool executeSetLed(char *tokens[MAX_NUM_TOKENS]);
+		bool executeDelay(char *tokens[MAX_NUM_TOKENS]);
 		//while:
 		bool executeWhile(char *tokens[], uint16_t lineNumber);
 		bool checkWhileConditions(char *expression, char *relationOperator, char *desiredState, uint16_t lineNumber);
@@ -43,8 +45,8 @@ class COMPILER_CLASS {
 		char setLed_stmnt[MAX_TOKEN_SIZE] = "setLed";
 		char returnLed_stmnt[MAX_TOKEN_SIZE] = "returnLed";
 		char returnKnop_stmnt[MAX_TOKEN_SIZE] = "returnKnop";
-		char delay_stmnt[MAX_TOKEN_SIZE] = "delay";
 		char while_stmnt[MAX_TOKEN_SIZE] = "while{";
+		char delay_stmnt[MAX_TOKEN_SIZE] = "delay";
 	//Epressions:
 		uint16_t expressionIndex(char *input);
 		void getExpressions(void);
