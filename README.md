@@ -2,11 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/RBOLDI/embeddedWeek2">
-<<<<<<< HEAD
-    <img src="images/danger.gif" alt="Logo" width="80" height="80">
-=======
     <img src="images/danger5.gif" alt="Logo" width="600">
->>>>>>> ea330feeb1b3d26996186388d34897a301b0607c
   </a>
 
   <h3 align="center">Embedded Week 2</h3>
@@ -48,6 +44,6 @@ cd launch_scripts
 ```
 <p align="center">
   <a href="https://github.com/RBOLDI/embeddedWeek2">
-    <img src="images/hva.png" alt="Logo" height="100">
+    <img src="images/hva.png" alt="Logo" height="60">
   </a>
 </p>
