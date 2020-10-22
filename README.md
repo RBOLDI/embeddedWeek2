@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/RBOLDI/embeddedWeek2">
-    <img src="images/danger5.gif" alt="Logo" width="80" height="80">
+    <img src="images/danger5.gif" alt="Logo" width="300" height="100">
   </a>
 
   <h3 align="center">Embedded Week 2</h3>
