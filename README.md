@@ -21,6 +21,7 @@ This is the repository for the Embedded System Engineering project provided by t
     <img src="images/sketch.png" alt="sketch">
   </a>
 </p>
+
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Usage
