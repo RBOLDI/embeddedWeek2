@@ -1,0 +1,12 @@
+setLed 1 LOW
+returnLed 1
+setLed
+while{ knop1-state == LOW do:
+setLed 1 HIGH
+delay 1000
+returnKnop 1
+returnLed 1
+setLed 1 LOW
+delay 1000
+}
+setLed 1 LOW
