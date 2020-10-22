@@ -43,6 +43,7 @@ cd launch_scripts
 ./launch_opdracht5_.sh
 ```
 <p align="center">
+  </br></br>
   <a href="https://github.com/RBOLDI/embeddedWeek2">
     <img src="images/hva.png" alt="Logo" height="60">
   </a>
