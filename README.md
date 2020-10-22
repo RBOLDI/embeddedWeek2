@@ -13,6 +13,14 @@
 ## About The Project
 This is the repository for the Embedded System Engineering project provided by the Amsterdam University of Applied Sciences. This repo contains all the assignments from project week two.
 
+<!-- HOOKUP -->
+## Hooking up components
+<p align="center">
+  </br>
+  <a href="https://github.com/RBOLDI/embeddedWeek2">
+    <img src="images/sketch.png" alt="sketch">
+  </a>
+</p>
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Usage
