@@ -135,7 +135,7 @@ bool COMPILER_CLASS::executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 		cout<<"Undefined knop...\n"<<endl;
 		return false;
 	}
-	buttonIndex = atoi(tokens[1])+2
+	buttonIndex = atoi(tokens[1])+2;
 	state = runtimeObjct.pollButton(buttonGPIO);
 	if(state == HIGH)
 		strcpy(expressionValues[buttonIndex], "HIGH");
