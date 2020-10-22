@@ -11,13 +11,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-kut
+This is the repository for the Embedded System Engineering project provided by the Amsterdam University of Applied Sciences. This repo contains all the assignments from project week two.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-Hallooo
-
 ### Usage
 
 1. Clone the repo
