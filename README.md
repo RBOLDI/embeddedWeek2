@@ -56,14 +56,15 @@ cd launch_scripts
 cd launch_scripts
 ./launch_opdracht6_.sh <command>
 ```
+
+## Contact
+Contributers: </br>
+Rowan Bolding - rowan.bolding@hva.nl
+Bart-Jan van Strien - bart-jan.van.strien@hva.nl
+
 <p align="center">
   </br></br>
   <a href="https://github.com/RBOLDI/embeddedWeek2">
     <img src="images/hva.png" alt="Logo" height="60">
   </a>
 </p>
-
-## Contact
-Contributers: </br>
-Rowan Bolding - rowan.bolding@hva.nl
-Bart-Jan van Strien - bart-jan.van.strien@hva.nl
