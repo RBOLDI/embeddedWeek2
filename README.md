@@ -57,11 +57,12 @@ npm install npm@latest -g
 
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/RBODLI/embeddedWeek2.git
 ```
-2. Install NPM packages
+2. Launch one of the assigments
 ```sh
-npm install
+cd launch_scripts
+./launch_opdracht1_.sh
 ```
 
 
