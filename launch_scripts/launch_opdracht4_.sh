@@ -10,7 +10,7 @@ git pull https://github.com/RBOLDI/embeddedWeek2.git
 
 echo -e "\n----------Compile C++ code for opdracht4!----------\n"
 cd ../opdrachten/opdracht4
-g++ -Wall -o opdracht ncurses.cpp -lncurses
+g++ -Wall -o opdracht4 ncurses.cpp -lncurses
 
 #run opdracht4
 
