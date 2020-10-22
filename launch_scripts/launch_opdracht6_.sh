@@ -15,5 +15,5 @@ g++ -Wall -o opdracht6 compiler.cpp runtime.cpp parser.cpp  -lbcm2835
 #run opdracht6
 
 echo -e "\n----------Run opdracht6!----------\n"
-./opdracht6
+./opdracht6 "$1"
 
