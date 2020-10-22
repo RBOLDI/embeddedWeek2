@@ -19,7 +19,7 @@ This is the repository for the Embedded System Engineering project provided by t
 
 1. Clone the repo
 ```sh
-git clone https://github.com/RBODLI/embeddedWeek2.git
+git clone https://github.com/RBOLDI/embeddedWeek2.git
 ```
 2. Launch one of the assigments
 ```sh
