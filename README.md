@@ -1,29 +1,162 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel justo id ligula euismod dignissim sit amet sed tortor. Quisque aliquam ex vel cursus maximus. Donec magna metus, bibendum ut elit vel, cursus ultricies nibh. Curabitur vitae viverra nunc. Suspendisse fermentum scelerisque risus, vitae tristique enim aliquet et. Mauris sit amet lacinia leo. Praesent consequat, mauris at bibendum lobortis, arcu lectus ultrices eros, ac tempor lorem mauris non elit. Nam ante arcu, pharetra sed nunc eget, scelerisque maximus nisi. Donec mattis vel mi a vehicula. Nam suscipit nulla a eros mattis euismod. Donec quis dolor varius, aliquet tellus vitae, congue erat. Nulla nibh sem, auctor eu convallis vel, vestibulum sit amet nisl. Donec lobortis dictum purus nec tristique.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-Donec placerat placerat velit, in tincidunt tellus pellentesque condimentum. Aenean hendrerit laoreet tempus. Curabitur sagittis augue vel ligula consectetur, quis venenatis nisi hendrerit. Nunc sollicitudin venenatis lorem, vitae porta arcu feugiat eget. Nullam dolor leo, viverra a erat vitae, molestie fermentum ante. In euismod elit eget massa molestie imperdiet. Duis eget nibh porta, faucibus neque vitae, facilisis risus. Donec commodo scelerisque pretium. Aliquam posuere massa eget urna tempor, venenatis laoreet lacus fermentum.
 
-Ut placerat risus vel semper porta. Nullam quis mauris nec ex consectetur condimentum. Praesent at rutrum nulla, ac fringilla lectus. Cras quis nulla id dolor scelerisque interdum nec non est. Nullam porttitor enim turpis, eget fermentum nunc ullamcorper ut. Donec gravida libero sed magna congue mattis. Donec rhoncus, risus ut fermentum fringilla, eros turpis posuere nunc, ut malesuada nisl nulla at velit. Donec faucibus sed lorem sit amet condimentum.
 
-Aenean hendrerit venenatis varius. Nulla facilisi. Vestibulum vel ex ut nisl sodales condimentum. Suspendisse semper mi id eros tincidunt, ut efficitur lacus ultrices. Nulla lacinia ex risus, non pulvinar lorem commodo sagittis. Etiam ut enim egestas, luctus dui et, luctus neque. Aenean ornare dictum porta. Aliquam congue congue est. Maecenas convallis nibh leo, vel consectetur ipsum maximus non. Etiam varius faucibus risus cursus ultrices. Fusce finibus est quis sagittis egestas. Phasellus finibus turpis at eros finibus, eget tempor metus finibus. Cras dictum ultrices nisl eget sagittis. Vivamus tincidunt molestie sem, vel iaculis metus tincidunt nec. Mauris porta mollis mi sed blandit. Vestibulum finibus tortor id augue facilisis dapibus.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/RBOLDI/embeddedWeek2">
+    <img src="images/danger5.gif" alt="Logo" width="600">
+  </a>
 
-Proin molestie nunc sed nunc vestibulum, ut faucibus ligula auctor. Phasellus congue ut sem ut imperdiet. Etiam arcu orci, dignissim finibus accumsan ultricies, malesuada bibendum metus. Vivamus dui quam, fringilla nec mi vitae, pulvinar placerat elit. Donec lacinia rhoncus ex vitae dictum. Ut ut feugiat nunc. Fusce varius varius nisl nec viverra. Donec in arcu semper, scelerisque odio sed, luctus urna. Donec porttitor venenatis odio id sollicitudin. In tristique sem in leo eleifend, vitae rutrum elit aliquam. Mauris quam lacus, congue ut euismod et, bibendum vel est. Fusce ultrices augue ac mattis rhoncus.
+  <h3 align="center">Embedded Week 2</h3>
 
-Morbi vestibulum sed erat at faucibus. Integer quis rhoncus est. Integer pellentesque ante quis erat consequat, non iaculis tellus porta. Donec interdum augue eget purus suscipit feugiat. Duis nisi magna, aliquet sed libero et, elementum elementum justo. Ut pellentesque viverra dapibus. Nullam congue velit eu ante maximus ultricies at luctus turpis. Duis scelerisque efficitur leo at faucibus. Maecenas a ante eu justo mollis varius.
+</p>
 
-Etiam et lectus ligula. Mauris in augue et quam efficitur laoreet. Aenean eu diam nibh. Nam tristique ultricies augue, non consectetur nunc efficitur et. Suspendisse eget augue diam. Maecenas suscipit mi faucibus dolor congue, non euismod libero fermentum. Sed efficitur mi sed elit tempus varius. Nam ullamcorper cursus vestibulum. Cras semper vulputate sollicitudin. Nam consequat at tortor sagittis hendrerit. Integer rutrum justo sed sapien malesuada, id ultrices risus scelerisque. Morbi in volutpat neque, at dictum felis. Phasellus cursus rutrum metus in tincidunt. Nam ornare dapibus mauris a laoreet. Duis rutrum, nibh quis convallis tincidunt, ligula sapien mollis dolor, sit amet malesuada dui augue sed est.
 
-Aenean at diam dictum, scelerisque lacus sit amet, pharetra turpis. Vivamus at enim odio. Curabitur dignissim dui arcu, nec commodo turpis dignissim sed. Proin lacinia mattis dui, id imperdiet tellus sodales nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc volutpat lectus ut metus volutpat, quis lobortis erat dictum. Donec at mi ut metus tristique hendrerit. Nulla ultrices sit amet elit non congue. Nam quis consequat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent fringilla ullamcorper euismod. Mauris efficitur placerat turpis, vel volutpat magna blandit eu. Morbi condimentum volutpat volutpat. Integer tempor rhoncus erat, vel sollicitudin velit ullamcorper id. Donec scelerisque eget tellus nec aliquam.
 
-Pellentesque hendrerit sapien ac mauris condimentum hendrerit. Curabitur nibh sem, sagittis sed viverra nec, ullamcorper vel sem. Morbi mollis, neque a interdum congue, sapien odio laoreet urna, nec laoreet augue metus vitae est. In commodo placerat faucibus. Fusce lorem nulla, aliquet maximus pellentesque nec, posuere at orci. Praesent augue mi, eleifend sit amet commodo ac, tempor eu sapien. Aliquam dapibus placerat risus eget pulvinar. Duis et blandit nisl. Vivamus nec nulla dolor. Ut malesuada nunc et dolor sagittis maximus. Pellentesque ut rhoncus sapien, vel faucibus dui. Ut eu auctor ante.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-Sed non purus eget quam fermentum venenatis et non sem. Integer fermentum eu lacus sit amet congue. Ut eget tempus justo, at auctor libero. Nam eu tellus interdum, scelerisque ante at, vulputate est. Pellentesque eleifend urna mi, vitae vehicula nulla dictum et. Etiam pharetra velit et massa convallis elementum quis sit amet sem. Donec lectus nibh, pharetra ac porta at, aliquet quis est. Aenean pulvinar purus et augue lacinia, non auctor velit sodales. Nunc egestas diam erat, ac scelerisque ipsum ultricies eget. Integer dictum dui eros, efficitur vulputate tortor dapibus id. Ut lobortis posuere dui, non dignissim magna tristique eu. Phasellus metus tellus, finibus et pellentesque at, scelerisque quis orci. Ut ac erat tellus. Donec luctus ante justo, ac suscipit arcu congue ut.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-Maecenas pharetra nunc et lectus pharetra, eu tempor velit porta. Aliquam consequat, massa eget venenatis condimentum, turpis odio bibendum est, sit amet pellentesque leo lacus ac ligula. Morbi pharetra leo facilisis vehicula ullamcorper. Pellentesque sed lectus lectus. Proin tempus euismod eros, in sodales dolor. In sagittis mi hendrerit nibh ornare accumsan in non lectus. Pellentesque sodales, sapien in laoreet tempor, libero metus fermentum dui, sed pellentesque neque augue nec quam. Ut vulputate, augue quis maximus vulputate, urna ipsum mollis mauris, in elementum augue odio nec metus. Nulla sodales purus sit amet ultricies consectetur. Donec dignissim quis enim et pellentesque. Sed ac efficitur metus. Duis enim odio, dictum nec dolor in, maximus consequat felis.
 
-Sed interdum ipsum id ipsum fermentum, at venenatis arcu lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed nunc maximus, tristique sem vel, iaculis purus. Phasellus congue, nisi tincidunt consectetur porttitor, velit mi mattis ex, nec pellentesque enim arcu quis turpis. Vivamus a est vitae quam eleifend aliquam laoreet a tortor. Nam vel diam porta, cursus tortor eget, iaculis sapien. Vivamus nec laoreet magna, et bibendum mi. Proin id aliquam felis, et consectetur enim. Nullam laoreet viverra ex at lobortis. Cras bibendum turpis at neque tempus, at vestibulum sem vehicula. Nullam tristique velit vitae tortor fringilla, a lacinia lorem commodo. Nam sit amet velit eget tellus auctor rutrum. Curabitur in laoreet nunc. Vestibulum ornare mi a porta finibus. Duis nec dignissim mi. Sed laoreet molestie libero a iaculis.
 
-Nunc ullamcorper dolor dui, et dictum erat congue eget. Sed ultricies bibendum bibendum. Integer tempor dapibus accumsan. Donec at velit et erat pulvinar dapibus. Aenean blandit at sem eget consequat. Nunc consectetur, erat quis vulputate sodales, ipsum dui sollicitudin mi, eget tempor sapien ligula vel risus. Integer vel facilisis ligula. Aliquam vitae felis ut mauris fringilla euismod. In pellentesque nibh et felis posuere, nec laoreet mauris pharetra.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Nulla efficitur, ante eget placerat posuere, arcu arcu maximus nulla, in tempus erat erat in neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed quis felis commodo, viverra mi eget, ultricies lacus. Quisque tincidunt gravida vulputate. Aliquam urna mauris, scelerisque auctor magna a, dapibus viverra purus. Suspendisse turpis ante, condimentum vitae arcu vel, efficitur venenatis orci. Suspendisse at vestibulum enim. Etiam euismod tortor sit amet turpis efficitur luctus. Morbi in tristique nisi, vel vestibulum nisi.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Aenean nec faucibus lacus, in hendrerit mauris. Duis maximus hendrerit commodo. Vestibulum risus tortor, porta eu dignissim eget, vulputate ac urna. Cras mollis, velit id suscipit suscipit, turpis ex tristique mi, id bibendum elit velit quis dui. Donec iaculis mi a congue ultricies. Quisque ultricies mauris odio, id vestibulum eros egestas fringilla. Phasellus quis sem enim. Etiam et finibus dolor. Phasellus justo nunc, volutpat sit amet vulputate vel, vestibulum quis sem. Aenean lobortis neque diam, ac eleifend tortor fringilla vitae. Nunc venenatis volutpat mauris vel venenatis.
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo_name`, `twitter_handle`, `email`
+
+
+### Built With
+
+* []()
+* []()
+* []()
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/github_username/repo_name.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* []()
+* []()
+* []()
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=flat-square
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=flat-square
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=flat-square
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=flat-square
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/github_username
+[product-screenshot]: images/screenshot.png
