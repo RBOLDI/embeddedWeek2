@@ -44,6 +44,6 @@ cd launch_scripts
 ```
 <p align="center">
   <a href="https://github.com/RBOLDI/embeddedWeek2">
-    <img src="images/hva.png" alt="Logo" width="600">
+    <img src="images/hva.png" alt="Logo" height="100">
   </a>
 </p>
