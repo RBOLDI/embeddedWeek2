@@ -15,6 +15,7 @@ This is the repository for the Embedded System Engineering project provided by t
 
 <!-- HOOKUP -->
 ## Hooking up components
+Please hook up the required components by using the sketch below. </br>
 <p align="center">
   </br>
   <a href="https://github.com/RBOLDI/embeddedWeek2">
