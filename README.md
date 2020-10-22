@@ -62,3 +62,8 @@ cd launch_scripts
     <img src="images/hva.png" alt="Logo" height="60">
   </a>
 </p>
+
+## Contact
+Contributers: </br>
+Rowan Bolding - rowan.bolding@hva.nl
+Bart-Jan van Strien - bart-jan.van.strien@hva.nl
