@@ -362,11 +362,13 @@ int main(int argc, char** argv) {
 	compObjct.compilerInit();
 	char *tokens[MAX_NUM_TOKENS];
 	char input[MAX_TOKEN_SIZE];
-	for(int i = 1; i < argc; i++){
-		tokens[i-1] = argv[i];
+	if(argv[1] != NULL){
+		for(int i = 1; i < argc; i++){
+			tokens[i-1] = argv[i];
+		}
+		cout<<"Program argument: "<<endl;
+		compObjct.executeInstruction(tokens, lineNumber);
 	}
-	cout<<"Program argument: "<<endl;
-	compObjct.executeInstruction(tokens, lineNumber);
 	cout<<"Run program.txt"<<endl;
 	//read program file
 	file.getline(input, sizeof input);
