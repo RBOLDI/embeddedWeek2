@@ -16,7 +16,10 @@ PARSER 				parseObjct;
 RUNTIME_CLASS 		runtimeObjct;
 
 ifstream file;
-
+/*
+	initializes all statement instructions known to the program
+	to their own index in an array of pointers.
+*/
 void COMPILER_CLASS::getStatements(void){
 	statements[SET_LED_STATMNT] 	= setLed_stmnt;
 	statements[RETURN_LED_STATMNT] 	= returnLed_stmnt;
@@ -24,7 +27,10 @@ void COMPILER_CLASS::getStatements(void){
 	statements[WHILE_STATEMENT] 	= while_stmnt;
 	statements[DELAY_STATEMENT]		= delay_stmnt;
 }
-
+/*
+	initializes all expressions and their values known to the program
+	to their own index in an array of pointers.
+*/
 void COMPILER_CLASS::getExpressions(void){
 	expressions[LED1_STATE_EXPR] 	= led1State_exp;
 	expressions[LED2_STATE_EXPR] 	= led2State_exp;
@@ -42,12 +48,17 @@ void COMPILER_CLASS::getExpressions(void){
 	expressionValues[KNOP3_STATE_EXPR] 	= knop3State_value;
 	expressionValues[KNOP4_STATE_EXPR] 	= knop4State_value;
 }
-
+/*
+	Initializes all statement instructions and expression known to the program
+*/
 void COMPILER_CLASS::compilerInit(void){
 	getStatements();
 	getExpressions();
 }
-
+/*
+	Loops through the array of pointers to statements and compares them to the program input.
+	If there is a match, it returns the index of the place where the statement is stored
+*/
 uint16_t COMPILER_CLASS::instructionIndex(char *input){
 	for(uint8_t i = 0; i < sizeof statements; i++){
 		if(statements[i] == NULL)
@@ -57,7 +68,10 @@ uint16_t COMPILER_CLASS::instructionIndex(char *input){
 	}
 	return INVALID_INPUT;
 }
-
+/*
+	Loops through the array of pointers to expressions and compares them to the program input.
+	If there is a match, it returns the index of the place where the statement is stored
+*/
 uint16_t COMPILER_CLASS::expressionIndex(char *input){
 	for(uint8_t i =0; i < MAX_NUM_TOKENS; i++){
 		if(expressions[i] == NULL)
@@ -67,7 +81,12 @@ uint16_t COMPILER_CLASS::expressionIndex(char *input){
 	}
 	return INVALID_INPUT;
 }
-
+/*
+	Executes the setLed statement.
+	BNF: <set-led-statement> ::= setLed <led-num> <led-state-exp>
+	Example: setLed 1 HIGH
+	this will turn on Led 1
+*/
 bool COMPILER_CLASS::executeSetLed(char *tokens[MAX_NUM_TOKENS]){
 	uint8_t ledGPIO;
 	uint8_t ledIndex;
@@ -100,7 +119,12 @@ bool COMPILER_CLASS::executeSetLed(char *tokens[MAX_NUM_TOKENS]){
 	runtimeObjct.setLed(ledGPIO, state);
 	return true;
 }
-
+/*
+	Executes the returnLed statement.
+	BNF: <return-led-statement> ::= returnLed <led-num>
+	Example: returnLed 2
+	Returns the state of led 2, HIGH if it's turned on, LOW if it's turned off.
+*/
 bool COMPILER_CLASS::executeReturnLed(char *tokens[MAX_NUM_TOKENS]){
 	uint8_t led;
 	//determine led hardware
@@ -117,7 +141,12 @@ bool COMPILER_CLASS::executeReturnLed(char *tokens[MAX_NUM_TOKENS]){
 	runtimeObjct.pollLed(led);
 	return true;
 }
-
+/*
+	Executes the returnKnop statement.
+	BNF: <return-knop-statement> ::= returnKnop <knop-num>
+	Example: returnKnop 4
+	Returns the state of knop 4, HIGH if it's pressed in, LOW if not.
+*/
 bool COMPILER_CLASS::executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 	uint8_t buttonGPIO;
 	uint8_t buttonIndex;
@@ -143,7 +172,15 @@ bool COMPILER_CLASS::executeReturnKnop(char *tokens[MAX_NUM_TOKENS]){
 		strcpy(expressionValues[buttonIndex], "LOW");
 	return true;
 }
-
+/*
+	Executes the while statement. 
+	BNF: 	<while-statement> ::= while{ <expression> <relation-operators> <desired-state> do
+			<statement> 
+			}
+	first it checks if the conditions set for the loop are true. If they are it'll loop
+	through the program till it sees the end of while character '}' then it checks if the conditions
+	are still true, if they are it repeats the loop.
+*/
 bool COMPILER_CLASS::executeWhile(char *tokens[], uint16_t lineNumber){
 	char input[MAX_TOKEN_SIZE];
 	char while_expression[MAX_TOKEN_SIZE];
@@ -177,7 +214,15 @@ bool COMPILER_CLASS::executeWhile(char *tokens[], uint16_t lineNumber){
 	skipToLine(lineNumber_cpy);
 	return true;
 }
-
+/*
+	Checks if the conditions set for the while loop are true. 
+	BNF: 	<while-statement> ::= while{ <expression> <relation-operators> <desired-state> do
+			<statement> 
+			}
+	First it finds out what statement it has to compare. then it finds out how to compare it through
+	the relation operator. Then it compares the expression acording to the relation operator to the 
+	desired state
+*/
 bool COMPILER_CLASS::checkWhileConditions(char *expression, char *relationOperator, char *desiredState, uint16_t lineNumber){
 	uint16_t expIndex = expressionIndex(expression);
 	if(!strcmp(relationOperator, "==")){
@@ -228,13 +273,21 @@ bool COMPILER_CLASS::checkWhileConditions(char *expression, char *relationOperat
 	cout << "incorrect usage of while on line: " << (unsigned)lineNumber<< endl;
 	return false;
 }
-
+/*
+	Executes delay statement
+	BNF: <delay-statemnt> ::> delay <miliseconds>
+	delays program with certain amount of miliseconds
+*/
 bool COMPILER_CLASS::executeDelay(char *tokens[]){
 	uint16_t ms = atoi(tokens[1]);
 	runtimeObjct.delayRPI(ms);
 	return true;
 }
-
+/*
+	Executes the input of the program.
+	First it finds out which statement it has to execute. Then it checks if it has 
+	the right amount of arguments en gives error messages if not.
+*/
 bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS],uint16_t lineNumber){
 	uint16_t instruction = instructionIndex(tokens[0]);
 	if(!strcmp(tokens[0], "}")){
@@ -290,8 +343,9 @@ bool COMPILER_CLASS::executeInstruction(char *tokens[MAX_NUM_TOKENS],uint16_t li
 
 COMPILER_CLASS compObjct;
 
-
-
+/*
+	Goes to a line in the program
+*/
 void COMPILER_CLASS::skipToLine(uint16_t lineNumber){
 	char input[MAX_TOKEN_SIZE];
 	file.close();

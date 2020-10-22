@@ -1,16 +1,15 @@
 <set-led-statement> ::= setLed <led-num> <led-state-exp>
-<return-led-statement> ::= returnLed<led-num>
+<return-led-statement> ::= returnLed <led-num>
 <led-state> ::= ON|OFF|HIGH|LOW
 
-<return-knop-statement> ::= returnKnop
+<return-knop-statement> ::= returnKnop <knop-num>
 <knop-state> ::= HIGH|LOW
 
 <whitespace> ::= 0x20|0x0C|0x0A|0x0D|0x09|0x0B
 
-<statement> ::= <set-led-statement>|<return-led-statement>|<return-knop-statement>
-<expression> ::= <led-state>|<knop-state>
 <relation-operators> ::= ==|!=|<=|>=|>|<
 <desired-state> ::= <led-state>|<knop-state>
+<delay-statemnt> ::> delay <miliseconds>
 
 <while-statement> ::= while{ <expression> <relation-operators> <desired-state> do
 <statement> 
