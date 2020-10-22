@@ -53,7 +53,7 @@ This is an example of how to list things you need to use the software and how to
 npm install npm@latest -g
 ```
 
-### Installation
+### Usage
 
 1. Clone the repo
 ```sh
@@ -64,12 +64,7 @@ git clone https://github.com/RBODLI/embeddedWeek2.git
 cd launch_scripts
 ./launch_opdracht1_.sh
 ```
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+cd launch_scripts
+./launch_opdracht2_.sh
+```
