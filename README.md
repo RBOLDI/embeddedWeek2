@@ -42,6 +42,10 @@ cd launch_scripts
 cd launch_scripts
 ./launch_opdracht5_.sh
 ```
+```sh
+cd launch_scripts
+./launch_opdracht6_.sh <command>
+```
 <p align="center">
   </br></br>
   <a href="https://github.com/RBOLDI/embeddedWeek2">
