@@ -59,7 +59,7 @@ cd launch_scripts
 
 ## Contact
 Contributers: </br>
-Rowan Bolding - rowan.bolding@hva.nl
+Rowan Bolding - rowan.bolding@hva.nl </br>
 Bart-Jan van Strien - bart-jan.van.strien@hva.nl
 
 <p align="center">
